@@ -9,9 +9,14 @@ services:
       dockerfile: nginx.dockerfile
     labels:
       lagoon.type: nginx
-      lagoon.persistent: /app/storage/ 
+      lagoon.volumes.persist.path: /app/public/storage
     volumes:
       - ./:/app:delegated
+
+volumes:
+  persist:
+    labels:
+      lagoon.type: persistent
 
 networks:
   amazeeio-network:
