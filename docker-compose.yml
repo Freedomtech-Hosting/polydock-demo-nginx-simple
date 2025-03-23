@@ -11,7 +11,7 @@ services:
       lagoon.type: nginx
       lagoon.volumes.persist.path: /app/public/storage
     volumes:
-      - ./:/app:delegated
+      - ./public:/app:delegated
 
 volumes:
   persist:
