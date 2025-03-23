@@ -1,0 +1,18 @@
+version: '2'
+services:
+  nginx:
+    networks:
+      - amazeeio-network
+      - default
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    labels:
+      lagoon.type: nginx
+      lagoon.persistent: /app/storage/ 
+    volumes:
+      - ./:/app:delegated
+
+networks:
+  amazeeio-network:
+    external: true

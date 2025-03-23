@@ -1,0 +1,1 @@
+# polydock-demo-nginx-simple
